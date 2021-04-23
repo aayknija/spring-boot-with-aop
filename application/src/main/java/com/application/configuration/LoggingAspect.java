@@ -34,7 +34,7 @@ public class LoggingAspect {
         String methodName = pjp.getSignature().toShortString();
         Object response = pjp.proceed();
         long endTime = System.currentTimeMillis();
-        double totalTimeTakenInMS = endTime-startTime;
+        long totalTimeTakenInMS = endTime-startTime;
         log.info("Execution for {} took {} ms",methodName,totalTimeTakenInMS);
         return response;
     }
